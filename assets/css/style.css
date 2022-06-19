@@ -28,6 +28,12 @@ hr {
 }
 
 
+/* -- page -- */
+.page {
+    overflow: hidden;
+}
+
+
 /* -- container -- */
 .container {
     width: 100%;
@@ -47,6 +53,24 @@ hr {
     left: 0;
     right: 0;
     z-index: 1000;
+}
+
+.header.fixed {
+    padding: 10px 0;
+
+    background-color: #eb8b8d;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translate3d(0, 0, 0);
+}
+
+.header.active {
+    background-color: #eb8b8d;
 }
 
 .header__inner {
@@ -110,6 +134,79 @@ hr {
 
 .nav__link.active {
     color: #fce38a;
+}
+
+
+/* -- nav-toogle -- */
+.nav-toogle {
+    display: none;
+    width: 30px;
+    padding: 10px 0;
+
+    font-size: 0;
+    color: transparent;
+
+    border: 0;
+    background: none;
+    cursor: pointer;
+
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 1;
+}
+
+.nav-toogle__item {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+
+    transition: background 0.2s linear;
+}
+
+.nav-toogle.active .nav-toogle__item {
+    background: none;
+}
+
+.nav-toogle.active .nav-toogle__item:before {
+    transform-origin: left top;
+    transform: rotate(45deg) translate3d(0px, -2px, 0);
+} 
+
+.nav-toogle.active .nav-toogle__item:after {
+    transform-origin: left bottom;
+    transform: rotate(-45deg) translate3d(0px, 3px, 0);
+} 
+
+.nav-toogle__item:before {
+    top: -8px;
+}
+
+.nav-toogle__item:after {
+    bottom: -8px;
+}
+
+.nav-toogle__item:before,
+.nav-toogle__item:after {
+    content: "";
+    width: 100%;
+    height: 3px;
+
+    background-color: #fff;
+
+    position: absolute;
+    left: 0;
+    z-index: 1;
+
+    transition: transform 0.2 linear;
 }
 
 
@@ -612,6 +709,9 @@ hr {
 }
 
 .reviews__foto {
+    display: block;
+    width: 210px;
+    height: 210px;
     border: 2px solid #95e1d3;
     border-radius: 50%;
 
@@ -715,6 +815,17 @@ hr {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 -15px;
+}
+
+.logos__item {
+    padding: 0 15px;
+}
+
+.logos__img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 
@@ -743,7 +854,7 @@ hr {
 
 .works__image {
     display: block;
-    max-width: 100%;
+    width: 100%;
     height: auto;
 
     transition: opacity 0.2s linear;
@@ -788,7 +899,7 @@ hr {
 }
 
 .clients__item {
-    flex: 0 0 50%;
+    width: 50%;
     margin-bottom: 60px;
     padding: 0 45px 0 175px;
 
@@ -838,11 +949,12 @@ hr {
 /* -- blog -- */
 .blog {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .blog__item {
-    flex: 0 0 31%;
+    width: 31%;
 }
 
 .blog__header {
@@ -1196,6 +1308,11 @@ hr {
     .intro__title {
         font-size: 120px;
     }
+
+    /* -- reviews -- */
+    .reviews__text {
+        font-size: 20px;
+    }
 }
 
 
@@ -1237,14 +1354,91 @@ hr {
     .services__item--border {
         border-bottom: 0;
     }
+
+    /* -- reviews -- */
+    .reviews {
+        padding: 0 60px;
+    }
+
+    .reviews__foto {
+        width: 150px;
+        height: 150px;
+    }
+
+    .reviews__item {
+        padding-left: 175px;
+    }
+
+    /* -- clients -- */
+    .clients {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .clients__item {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .clients__item:last-child {
+        margin-bottom: 0;
+    }
+
+    /* -- footer -- */
+    .footer__col--first {
+        width: 100%;
+    }
+
+    .footer__col--second,
+    .footer__col--third {
+        width: 50%;
+    }
+
+    /* -- instagram -- */
+    .instagram {
+        justify-content: flex-start;
+    }
+
+    .instagram__item {
+        width: auto;
+        border-right: 1px solid white;
+    }
+
 }
 
 
 @media (max-width: 770px) {
 
+    /* -- intro -- */
+    .intro {
+        min-height: 650px;
+    }
+
+    /* -- header -- */
+    .header {
+        padding: 10px 0;
+    }
+    
     /* -- nav -- */
     .nav {
         display: none;
+        width: 100%;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        background-color: #eb8b8d;
+    }
+
+    .nav__link {
+        display: block;
+        margin: 0;
+        padding: 8px 20px;
+    }
+
+    .nav-toogle {
+        display: block;
     }
     
     /* -- section -- */
@@ -1305,6 +1499,55 @@ hr {
     .wedo__item {
         width: 100%;
     }
+
+    /* -- reviews -- */
+    .reviews__foto {
+        position: static;
+        margin: 0 auto 20px;
+    }
+
+    .reviews__item {
+        padding-left: 0;
+    }
+
+    .reviews__text {
+        font-size: 16px;
+    }
+
+    .reviews__author {
+        font-style: 20px;
+    }
+
+    /* -- works -- */
+    .works {
+        flex-wrap: wrap;
+    }
+    
+    .works__col {
+        flex: none;
+        width: 50%;
+    }
+
+    /* -- blog -- */
+    .blog {
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
+    .blog__item {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .blog-stat__item:last-child {
+        margin-bottom: 0;
+    }
+
+    /* -- footer -- */
+    .footer__col--second,
+    .footer__col--third {
+        width: 100%;
+    }
 }
 
 
@@ -1339,7 +1582,6 @@ hr {
     /* -- stat -- */
     .stat__item {
         width: 100%;
-
         border-bottom: 1px solid #b5eae0;
     }
 
@@ -1360,5 +1602,74 @@ hr {
         width: 180px;
         bottom: -50px;
         right: -80px;
+    }
+
+    /* -- reviews -- */
+    .reviews {
+        padding: 0;
+    }
+
+    .reviews__btn {
+        top: 18%;
+    }
+
+    /* -- logos -- */
+    .logos {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logos__item {
+        width: 50%;
+        margin-bottom: 20px;
+    }
+
+    .logos__img {
+        margin: 0 auto;
+    }
+
+    /* -- works -- */
+    .works__col {
+        width: 100%;
+    }
+
+    /* -- clients -- */
+    .clients__foto {
+        position: static;
+    }
+
+    .clients__item {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .clients__prof:after {
+        margin: 15px auto;
+    }
+
+    /* -- blogs -- */
+    .blogs__img {
+        width: 80px;
+        height: 60px;
+    }
+
+    .blogs__title {
+        font-size: 10px;
+    }
+
+    /* -- subscribe -- */
+    .subscribe {
+        flex-wrap: wrap;
+        max-width: none;
+    }
+
+    .subscribe__input {
+        margin-bottom: 10px;
+        border-right: 1px solid #e7e7e7;
+    }
+
+    .subscribe__input,
+    .subscribe__btn {
+        width: 100%;
     }
 }
