@@ -787,7 +787,7 @@ hr {
 }
 
 .swiper-pagination {
-    bottom: 0px;
+    bottom: -55px !important;
 }
 
 .swiper-pagination-bullet {
@@ -1061,6 +1061,7 @@ hr {
 .blog-stat__item i {
     color: #95e1d3;
 }
+
 
 /* -- map -- */
 .map {
@@ -1540,6 +1541,10 @@ hr {
 
     .reviews__author {
         font-style: 20px;
+    }
+
+    .swiper-pagination {
+        bottom: -20px !important;
     }
 
     /* -- works -- */

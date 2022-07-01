@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300i,400,700&amp;subset=cyrillic-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <link
+    rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <title>MoGo</title>
 </head>
@@ -280,7 +281,7 @@
         <section class="section  section--gray">
             <div class="container">
 
-                <div class="reviews  swiper-container">
+                <div class="reviews  swiper-container  swiper1">
                     <div class="swiper-wrapper">
                         <div class="reviews__item  swiper-slide">                      
                             <img class="reviews__foto" src="assets/images/avatar.png" alt="">
@@ -295,7 +296,7 @@
                         </div>
                     </div>
 
-                    <div class="swiper-pagination" style="bottom: -70px;"></div>
+                    <div class="swiper-pagination"></div>
 
                     <a class="reviews__btn  reviews__btn--prev" href="">Prev</a>
                     <a class="reviews__btn  reviews__btn--next" href="">Next</a>
@@ -519,15 +520,25 @@
         <div class="section">
             <div class="container">
 
-                <div class="reviews">
+                <div class="reviews  swiper-container  swiper2">
+                    <div class="swiper-wrapper">
+                        <div class="reviews__item  swiper-slide">
+                            <img class="reviews__foto" src="assets/images/avatar.png" alt="">
+                            <div class="reviews__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa error fugiat explicabo esse sint rerum nostrum assumenda quae quas consectetur vel repellendus aliquid quisquam corrupti itaque iusto, porro modi non.</div>
+                            <div class="reviews__author">Jon Doe</div>
+                        </div>
+                        <div class="reviews__item  swiper-slide">
+                            <img class="reviews__foto" src="assets/images/avatar.png" alt="">
+                            <div class="reviews__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa error fugiat explicabo esse sint rerum nostrum assumenda quae quas consectetur vel repellendus aliquid quisquam corrupti itaque iusto, porro modi non.</div>
+                            <div class="reviews__author">Jon Doe</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-pagination"></div>
+                    
                     <a class="reviews__btn  reviews__btn--prev" href="">Prev</a>
                     <a class="reviews__btn  reviews__btn--next" href="">Next</a>
-
-                    <div class="reviews__item">
-                        <img class="reviews__foto" src="assets/images/avatar.png" alt="">
-                        <div class="reviews__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa error fugiat explicabo esse sint rerum nostrum assumenda quae quas consectetur vel repellendus aliquid quisquam corrupti itaque iusto, porro modi non.</div>
-                        <div class="reviews__author">Jon Doe</div>
-                    </div>
+                    
                 </div><!-- /.reviews -->
 
             </div><!-- /.container -->

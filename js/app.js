@@ -56,20 +56,39 @@ accordionHeader.forEach(function(item) {
 
 
 // -- slider 
-new Swiper('.reviews', {
+new Swiper('.swiper1', {
     slidesPerView: 'auto',
     loop: true,
+    loopedSlides: 2,
     spaceBetween: 200,
     centeredSlides: true,
 
     pagination: {
         el: ".swiper-pagination",
-        clickable: true,
+        clickable: true
     },
 
     navigation: {
         nextEl: '.reviews__btn--next',
-        prevEl: '.reviews__btn--prev',
+        prevEl: '.reviews__btn--prev'
+    },
+});
+
+new Swiper('.swiper2', {
+    slidesPerView: 'auto',
+    loop: true,
+    loopedSlides: 2,
+    spaceBetween: 200,
+    centeredSlides: true,
+
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+    },
+
+    navigation: {
+        nextEl: '.reviews__btn--next',
+        prevEl: '.reviews__btn--prev'
     },
 });
 
