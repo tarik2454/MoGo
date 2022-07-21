@@ -139,7 +139,7 @@ hr {
 
 
 /* -- nav-toggle -- */
-.nav-toggle {
+/* .nav-toggle {
     display: none;
     width: 30px;
     padding: 10px 0;
@@ -213,6 +213,75 @@ hr {
 .nav-toggle.active .nav-toggle__item:after {
     transform-origin: left bottom;
     transform: rotate(-45deg) translate3d(0px, 3px, 0);
+} */
+
+.nav-toggle {
+    display: none;
+    width: 30px;
+    height: 20px;
+    padding: 0;
+
+    border: 0;
+    background: none;
+    cursor: pointer;
+
+    font-size: 0;
+    color: transparent;
+
+    position: absolute;
+    top: 50%;
+    right: 20px;
+
+    transform: translateY(-50%);
+}
+
+.nav-toggle::before,
+.nav-toggle::after,
+.nav-toggle__item {
+    display: block;
+    width: 100%;
+    height: 3px;
+
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+}
+
+.nav-toggle::before,
+.nav-toggle::after {
+    content: "";
+    transition: transform 0.2s linear;
+}
+
+.nav-toggle::before {
+    top: 0;
+}
+
+.nav-toggle::after {
+    bottom: 0;
+}
+
+.nav-toggle__item {
+    top: 50%;
+    transform: translateY(-50%);
+    transition: opacity 0.2s linear;
+}
+
+.nav-toggle.active .nav-toggle__item {
+    opacity: 0;
+}
+
+.nav-toggle.active::before,
+.nav-toggle.active::after {
+    top: 50%;
+}
+
+.nav-toggle.active::before {
+    transform: rotate(45deg);
+}
+
+.nav-toggle.active::after {
+    transform: rotate(-45deg);
 }
 
 
@@ -1453,13 +1522,14 @@ hr {
     }
 
     .nav.active {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .nav__link {
         display: block;
-        margin: 0;
-        padding: 8px 20px;
+        margin: 8px 20px;
     }
 
     .nav-toggle {

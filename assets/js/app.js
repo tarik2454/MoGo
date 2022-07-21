@@ -29,9 +29,11 @@ scrollBtn.forEach(function(item) {
         window.scrollTo({ top: blockOfset, behavior: 'smooth' })
         
         navItem.forEach(function(item) {
+            setTimeout(function() {
             item.classList.remove('active');
             nav.classList.remove('active');
             navToggle.classList.remove('active');
+            }, 200);
         });
         this.classList.add('active');
     });
@@ -60,7 +62,7 @@ new Swiper('.swiper1', {
     slidesPerView: 'auto',
     loop: true,
     loopedSlides: 2,
-    spaceBetween: 200,
+    spaceBetween: 500,
     centeredSlides: true,
 
     pagination: {
@@ -78,7 +80,7 @@ new Swiper('.swiper2', {
     slidesPerView: 'auto',
     loop: true,
     loopedSlides: 2,
-    spaceBetween: 200,
+    spaceBetween: 500,
     centeredSlides: true,
 
     navigation: {
